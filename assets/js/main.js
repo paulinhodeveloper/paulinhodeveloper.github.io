@@ -1,4 +1,4 @@
-const STEP_MS = 260;
+const STEP_MS = 320;
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const storage = {
@@ -37,47 +37,59 @@ function initThemeToggle() {
 
 function initRunner() {
   const runner = document.querySelector(".runner");
-  const list = runner?.querySelector("[data-runner]");
+  const items = [...(runner?.querySelectorAll("[data-runner] li") ?? [])];
   const summary = runner?.querySelector("[data-runner-summary]");
   const rerun = runner?.querySelector("[data-runner-rerun]");
-  if (!runner || !list || !summary) return;
+  if (!runner || !items.length || !summary) return;
 
-  const items = [...list.children];
+  const total = items.length;
   let timers = [];
 
-  const clearTimers = () => {
-    timers.forEach(clearTimeout);
-    timers = [];
+  const showProgress = (done) => {
+    summary.dataset.state = "running";
+    summary.textContent = `Executando ${done} de ${total}`;
+  };
+
+  const showResult = (elapsedMs) => {
+    const passed = document.createElement("span");
+    passed.textContent = `${total} passed`;
+    summary.dataset.state = "passed";
+    summary.replaceChildren(passed, ` (${(elapsedMs / 1000).toFixed(1)}s)`);
+    runner.setAttribute("aria-busy", "false");
+    if (rerun) rerun.disabled = false;
   };
 
   const run = () => {
-    clearTimers();
+    timers.forEach(clearTimeout);
+    timers = [];
 
-    if (prefersReducedMotion.matches) {
-      runner.classList.remove("is-running");
-      return;
-    }
-
-    items.forEach((item) => item.classList.remove("is-done"));
-    summary.classList.remove("is-done");
-    runner.classList.add("is-running");
+    const startedAt = performance.now();
+    runner.setAttribute("aria-busy", "true");
     if (rerun) rerun.disabled = true;
+    items.forEach((item) => {
+      item.dataset.state = "pending";
+    });
+    showProgress(0);
 
     items.forEach((item, index) => {
-      timers.push(setTimeout(() => item.classList.add("is-done"), STEP_MS * (index + 1)));
+      timers.push(
+        setTimeout(() => {
+          item.dataset.state = "running";
+        }, STEP_MS * index),
+      );
+      timers.push(
+        setTimeout(() => {
+          item.dataset.state = "passed";
+          showProgress(index + 1);
+        }, STEP_MS * index + STEP_MS * 0.75),
+      );
     });
 
-    timers.push(
-      setTimeout(() => {
-        summary.classList.add("is-done");
-        runner.classList.remove("is-running");
-        if (rerun) rerun.disabled = false;
-      }, STEP_MS * (items.length + 1)),
-    );
+    timers.push(setTimeout(() => showResult(performance.now() - startedAt), STEP_MS * total + 150));
   };
 
   rerun?.addEventListener("click", run);
-  run();
+  if (!prefersReducedMotion.matches) run();
 }
 
 function initActiveSection() {
@@ -108,7 +120,12 @@ function initActiveSection() {
 }
 
 function initPrint() {
-  document.querySelector("[data-print]")?.addEventListener("click", () => window.print());
+  document.querySelector("[data-print]")?.addEventListener("click", () => {
+    const pageTitle = document.title;
+    document.title = "Curriculo - Paulo Henrique Santos Borges - Analista de QA";
+    window.addEventListener("afterprint", () => (document.title = pageTitle), { once: true });
+    window.print();
+  });
 }
 
 function initYear() {
