@@ -1,141 +1,257 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" href="icons/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <title>Curriculum Paulo Henrique</title>
-    <meta name="description" content="Curriculum Paulo Henrique Desenvolvedor Backend C# Jr.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paulo Henrique Santos Borges | Analista de QA</title>
+  <meta name="description" content="Analista de QA em Joinville/SC. Automação de testes E2E com Playwright, Cypress e Selenium, testes de API, performance e segurança.">
+  <meta name="author" content="Paulo Henrique Santos Borges">
+  <meta name="theme-color" content="#EDF0F3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#10151D" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://paulinhodeveloper.github.io/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Paulo Henrique Santos Borges | Analista de QA">
+  <meta property="og:description" content="Automação de testes E2E, testes de API, performance e segurança.">
+  <meta property="og:url" content="https://paulinhodeveloper.github.io/">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>
+    (() => {
+      try {
+        const theme = localStorage.getItem("theme");
+        if (theme) document.documentElement.dataset.theme = theme;
+      } catch {}
+    })();
+  </script>
+  <script src="assets/js/main.js" defer></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Paulo Henrique Santos Borges",
+      "jobTitle": "Analista de QA",
+      "address": { "@type": "PostalAddress", "addressLocality": "Joinville", "addressRegion": "SC", "addressCountry": "BR" },
+      "email": "mailto:paulinhoborgesbjj@gmail.com",
+      "url": "https://paulinhodeveloper.github.io/",
+      "sameAs": ["https://www.linkedin.com/in/paulinhoborges", "https://github.com/paulinhodeveloper"]
+    }
+  </script>
 </head>
-
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="./imgs/marca.svg" alt="Marca" width="318" height="41">
-        </div>
-        <ul class="header-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#experiencia">Experiência</a></li>
-            <li><a href="#formacao">Formação</a></li>
-            <li><a href="#contato">Contato</a></li>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#topo" aria-label="Paulo Henrique, início">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M9 16.5l4.5 4.5L23 11.5"/></svg>
+        <span>Paulo Henrique</span>
+      </a>
+      <nav class="site-nav" aria-label="Seções">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#experiencia">Experiência</a></li>
+          <li><a href="#competencias">Competências</a></li>
+          <li><a href="#formacao">Formação</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Alternar tema escuro" aria-pressed="false" data-theme-toggle>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+      </button>
     </div>
+  </header>
 
-    <main class="introducao">
-        <img src="./imgs/perfil.png" alt="Foto Perfil" width="360" height="520" loading="lazy">
-        <div>
-            <h1>Desenvolvedor<br>Backend C#</h1>
-            <p>Olá! Sou um desenvolvedor apaixonado, estou sempre em busca de desafios que me permitam crescer profissionalmente e contribuir de maneira significativa.</p>
+  <main id="conteudo">
+    <section class="hero container" id="topo" aria-labelledby="hero-title">
+      <div class="hero__text">
+        <h1 id="hero-title" class="hero__title">Paulo Henrique Santos Borges</h1>
+        <p class="hero__role">Analista de QA em Joinville/SC</p>
+        <p class="hero__lead">Testo software com olhar de quem também desenvolve. Automatizo fluxos E2E, valido APIs, meço performance e procuro falhas de permissão antes que elas cheguem ao cliente.</p>
+        <ul class="actions">
+          <li><a class="button button--primary" href="mailto:paulinhoborgesbjj@gmail.com">Enviar e-mail</a></li>
+          <li><a class="button" href="https://www.linkedin.com/in/paulinhoborges" rel="me noopener" target="_blank">LinkedIn</a></li>
+          <li><a class="button" href="https://github.com/paulinhodeveloper" rel="me noopener" target="_blank">GitHub</a></li>
+          <li><button class="button" type="button" data-print>Imprimir currículo</button></li>
+        </ul>
+      </div>
+
+      <figure class="runner" aria-labelledby="runner-caption">
+        <div class="runner__bar">
+          <span class="runner__file">perfil.spec.ts</span>
+          <button class="runner__rerun" type="button" data-runner-rerun>Rodar de novo</button>
         </div>
-    </main>
-
-    <section class="experiencia" id="experiencia" aria-label="Experiência">
-        <h2 class="subtitulo">Últimas experiências</h2>
-        <div>
-            <div class="empresa">
-                <span class="empresa-ano">08/2011 - 05/2024</span>
-                <h3 class="empresa-titulo">NDD Tech</h3>
-                <span class="empresa-titulo">Analista Desenvolvedor C# Júnior</span>
-                <p class="empresa-texto">Como <strong>Analista Desenvolvedor</strong>, atuei no desenvolvimento da <strong>comunicação com webservices de prefeituras</strong>, desenvolvendo integrações eficientes para processos fiscais eletrônicos. Além disso, atuei na <strong>correção de bugs</strong> e na elaboração de <strong>queries SQL </strong>e outros.</p>
-                <ul class="empresa-habilidades">
-                    <li>C#</li>
-                    <li>Banco Oracle</li>
-                    <li>Banco MS-SQL</li>
-                    <li>Webservice Rest API</li>
-                    <li>Webservice SOAP</li>
-                    <li>Entity Framework</li>
-                    <li>TDD</li>
-                    <li>GIT</li>
-                </ul>
-            </div>
-            <div class="empresa">
-                <span class="empresa-ano">09/2020 - 08/2021</span>
-                <h3 class="empresa-titulo">NDD Tech</h3>
-                <span class="empresa-titulo">Analista de Teste Júnior</span>
-                <p class="empresa-texto">Como <strong>Analista de Teste</strong>, Desenvolvia cenários de teste que abrangem funcionalidades completas das aplicações. Com objetivo de identificar não apenas <strong>bugs</strong>, mas também para verificar a <strong>usabilidade</strong>, a <strong>segurança</strong> e a <strong>conformidade com as especificações.</strong></p>
-                <ul class="empresa-habilidades">
-                    <li>Garantia de qualidade</li>
-                    <li>Teste Manual</li>
-                    <li>Teste Automatizado</li>
-                    <li>Check List</li>
-                    <li>Execução de testes</li>
-                </ul>
-            </div>
-            <div class="empresa">
-                <span class="empresa-ano">11/2018 - 09/2020</span>
-                <h3 class="empresa-titulo">NDD Tech</h3>
-                <span class="empresa-titulo">Analista de Suporte Júnior</span>
-                <p class="empresa-texto">Como <strong>Analista de Suporte</strong>, meu trabalho envolvia <strong>atendimento direto aos usuários via telefone, helpdesk ou acesso remoto</strong>, oferecendo soluções práticas e rápidas para diversas questões.</p>
-                <ul class="empresa-habilidades">
-                    <li>HelpDesk</li>
-                    <li>Atendimento ao cliente</li>
-                    <li>Servidores</li>
-                    <li>Redes</li>
-                    <li>Banco de Dados </li>
-                    <li>Instalação</li>
-                    <li>Manutenção</li>
-                </ul>
-            </div>
+        <pre class="runner__cmd"><span class="runner__prompt">$</span> npx playwright test perfil.spec.ts</pre>
+        <ol class="runner__list" data-runner>
+          <li>possui especialização em Teste e Qualidade de Software</li>
+          <li>automatiza E2E com Playwright, Cypress e Selenium</li>
+          <li>valida APIs REST e SOAP</li>
+          <li>executa testes de carga com k6 e JMeter</li>
+          <li>testa segurança e controle de acesso</li>
+          <li>conversa de igual para igual com o time de dev</li>
+        </ol>
+        <p class="runner__summary" data-runner-summary><span>6 passed</span> (1.2s)</p>
+        <figcaption id="runner-caption" class="visually-hidden">Resumo do perfil apresentado como um relatório de testes</figcaption>
+      </figure>
     </section>
 
-    <section class="formacao" id="formacao" aria-label="Formação">
-        <div class="formacao-container">
-            <h2 class="subtitulo">Formação</h2>
-
-            <div>
-                <p class="formacao-texto">
-                    Minha área de formação é em: <strong>Análise e Desenvolvimento de Sistemas</strong> 🎓 cursando o 
-                    <strong>último Semestre do curso</strong>. Além disso me mantenho sempre atualizado com cursos online.
-                </p>
-
-                <ul class="faculdade-lista">
-                    <li class="faculdade">
-                        <span class="faculdade-tipo">Tecnólogo</span>
-                        <h3 class="faculdade-curso">Análise e Desenvolvimento de Sistemas</h3>
-                        <span class="faculdade-tipo">Universidade</span>
-                        <span class="faculdade-instituicao">Unisociesc</span>
-                    </li>
-                </ul>
-                <div class="formacao-extra">
-                    <div class="cursos">
-                        <h3>Cursos online</h3>
-                        <ul>
-                            <li>Certified Tech Developer</li>                                                     
-                            <li>C# e orientação a objetos</li>
-                            <li>ASP.NET Core REST APIs</li>
-                            <li>C#: Testes de unidade e TDD com xUnit</li>  
-                            <li>Fundamentos Quality Assurance: TestPlan e boas práticas</li>
-                            <li>Formação DevOps</li>
-                            <li>LGPD: conhecendo e entendendo seus impactos</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="section container" id="sobre" aria-labelledby="sobre-title">
+      <h2 id="sobre-title" class="section__title">Sobre</h2>
+      <div class="section__body prose">
+        <p>Comecei no suporte, passei por testes manuais no produto de NFS-e da NDD Tech e depois atuei quase três anos como desenvolvedor C#. Hoje, como desenvolvedor fullstack na Data Company, sou responsável pela qualidade da nova Central de Atendimento da empresa.</p>
+        <p>Essa trajetória me deu as duas visões: sei onde o código costuma quebrar e sei como provar isso com testes que o time consegue manter. Estou buscando uma posição de QA Pleno, presencial em Joinville, híbrida ou remota.</p>
+      </div>
     </section>
 
-    <section class="contato" id="contato">
-        <div class="contato-container">
-            <p class="contato-texto">Estou disponível para trabalho. Entre em contato comigo e marcamos uma conversa</p>
-            <ul class="contato-redes">
-                <li><a href="mailto:paulinhodeveloper@outlook.com">Email</a></li>
-                <li><a href="https://www.linkedin.com/in/paulinhoborges/">Linkedin</a></li>
-            </ul>          
-        </div>
+    <section class="section container" id="experiencia" aria-labelledby="experiencia-title">
+      <h2 id="experiencia-title" class="section__title">Experiência</h2>
+      <ol class="section__body timeline">
+        <li class="timeline__item">
+          <p class="timeline__date"><time datetime="2025-11">nov 2025</time> até hoje</p>
+          <div class="timeline__content">
+            <h3 class="timeline__role">Analista Desenvolvedor Fullstack</h3>
+            <p class="timeline__org">Data Company, Joinville</p>
+            <p>Desenvolvimento e qualidade da Central de Atendimento, uma plataforma multiempresa com chamados, chat por WhatsApp, kanban, SLA e relatórios.</p>
+            <ul class="timeline__points">
+              <li>Suíte E2E com Playwright e Page Object Model, com mais de 30 módulos</li>
+              <li>Testes de controle de acesso: RBAC, políticas de acesso e isolamento entre empresas</li>
+              <li>Testes de carga com k6 e JMeter, testes de API com Postman</li>
+              <li>Testes unitários com Jest e Vitest, com meta de cobertura e lint como critério de aprovação</li>
+            </ul>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__date"><time datetime="2025-07">jul 2025</time> a <time datetime="2025-11">nov 2025</time></p>
+          <div class="timeline__content">
+            <h3 class="timeline__role">Analista de Suporte de Sistemas Pleno</h3>
+            <p class="timeline__org">Data Company, Joinville</p>
+            <p>Suporte a sistemas de gestão empresarial, análise de incidentes e consultas em Firebird e SQL.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__date"><time datetime="2025-01">jan 2025</time> a <time datetime="2025-04">abr 2025</time></p>
+          <div class="timeline__content">
+            <h3 class="timeline__role">Analista de Suporte de TI</h3>
+            <p class="timeline__org">SWLTEC Soluções em TI, Joinville</p>
+            <p>Suporte em hardware, software e redes, gestão de acessos e rotinas de backup.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__date"><time datetime="2021-08">ago 2021</time> a <time datetime="2024-05">mai 2024</time></p>
+          <div class="timeline__content">
+            <h3 class="timeline__role">Analista Desenvolvedor C# Júnior</h3>
+            <p class="timeline__org">NDD Tech, remoto</p>
+            <p>Integrações REST e SOAP com webservices de prefeituras para emissão de NFS-e, correção de bugs e validação de regras fiscais junto aos times de QA e suporte.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__date"><time datetime="2020-09">set 2020</time> a <time datetime="2021-08">ago 2021</time></p>
+          <div class="timeline__content">
+            <h3 class="timeline__role">Analista de Testes Júnior</h3>
+            <p class="timeline__org">NDD Tech, Lages</p>
+            <p>Casos de teste e testes funcionais, exploratórios, de regressão e de integração no produto de NFS-e. Testes de API com SoapUI e reporte de bugs ao time de desenvolvimento.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__date"><time datetime="2013">2013</time> a <time datetime="2020-09">set 2020</time></p>
+          <div class="timeline__content">
+            <h3 class="timeline__role">Suporte técnico e de sistemas</h3>
+            <p class="timeline__org">NDD Tech, SOFTECSUL, BRASTRAZ e VLNET</p>
+            <p>Suporte a ERP e ao produto de NFS-e, consultas SQL e reporte de defeitos ao desenvolvimento.</p>
+          </div>
+        </li>
+      </ol>
     </section>
 
-    <footer class="footer">
-        <p>Todos os direitos reservados &copy; - <span id="current-year"></span></p>
-    </footer>
+    <section class="section container" id="competencias" aria-labelledby="competencias-title">
+      <h2 id="competencias-title" class="section__title">Competências</h2>
+      <dl class="section__body skills">
+        <div class="skills__group">
+          <dt>Automação E2E</dt>
+          <dd>Playwright, Cypress, Selenium, Page Object Model</dd>
+        </div>
+        <div class="skills__group">
+          <dt>API</dt>
+          <dd>Postman, Newman, SoapUI, REST, SOAP</dd>
+        </div>
+        <div class="skills__group">
+          <dt>Performance</dt>
+          <dd>k6, JMeter</dd>
+        </div>
+        <div class="skills__group">
+          <dt>Unitários</dt>
+          <dd>Jest, Vitest, xUnit</dd>
+        </div>
+        <div class="skills__group">
+          <dt>Segurança</dt>
+          <dd>Controle de acesso, análise de vulnerabilidades, OWASP, ISO 27001</dd>
+        </div>
+        <div class="skills__group">
+          <dt>Processo</dt>
+          <dd>Planejamento de testes, técnicas de caixa-preta, teste exploratório, BDD, Scrum</dd>
+        </div>
+        <div class="skills__group">
+          <dt>Stack</dt>
+          <dd>TypeScript, C# e .NET, SQL, Vue 3, NestJS, PostgreSQL, Docker, Git, GitHub Actions</dd>
+        </div>
+      </dl>
+    </section>
 
-    <script src="./JS/script.js" defer></script>
+    <section class="section container" id="formacao" aria-labelledby="formacao-title">
+      <h2 id="formacao-title" class="section__title">Formação</h2>
+      <ol class="section__body timeline">
+        <li class="timeline__item">
+          <p class="timeline__date">em andamento, até <time datetime="2027-02">fev 2027</time></p>
+          <div class="timeline__content">
+            <h3 class="timeline__role">MBA em Engenharia de Software</h3>
+            <p class="timeline__org">Anhanguera</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__date"><time datetime="2026-06">2026</time></p>
+          <div class="timeline__content">
+            <h3 class="timeline__role">Especialização em Teste e Qualidade de Software</h3>
+            <p class="timeline__org">Uninassau, 360 horas</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__date"><time datetime="2026-04">2026</time></p>
+          <div class="timeline__content">
+            <h3 class="timeline__role">Especialização em Segurança da Informação</h3>
+            <p class="timeline__org">Unisociesc, 360 horas</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__date"><time datetime="2024-12">2024</time></p>
+          <div class="timeline__content">
+            <h3 class="timeline__role">Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
+            <p class="timeline__org">Unisociesc</p>
+          </div>
+        </li>
+      </ol>
+    </section>
 
+    <section class="section container" id="contato" aria-labelledby="contato-title">
+      <h2 id="contato-title" class="section__title">Contato</h2>
+      <div class="section__body contact">
+        <p class="contact__lead">Tem uma vaga de QA ou quer conversar sobre testes? Respondo por e-mail ou pelo LinkedIn.</p>
+        <a class="contact__email" href="mailto:paulinhoborgesbjj@gmail.com">paulinhoborgesbjj@gmail.com</a>
+        <ul class="contact__links">
+          <li><a href="https://www.linkedin.com/in/paulinhoborges" rel="me noopener" target="_blank">linkedin.com/in/paulinhoborges</a></li>
+          <li><a href="https://github.com/paulinhodeveloper" rel="me noopener" target="_blank">github.com/paulinhodeveloper</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>&copy; <span data-year>2026</span> Paulo Henrique Santos Borges</p>
+      <p><a href="https://github.com/paulinhodeveloper/paulinhodeveloper.github.io" rel="noopener" target="_blank">Código-fonte deste site</a></p>
+    </div>
+  </footer>
 </body>
-
 </html>
