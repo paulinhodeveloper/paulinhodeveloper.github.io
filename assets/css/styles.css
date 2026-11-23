@@ -129,6 +129,10 @@ a:hover {
   margin-inline: auto;
 }
 
+.print-only {
+  display: none;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -187,16 +191,13 @@ a:hover {
   height: 1.75rem;
 }
 
-.brand__mark rect {
-  fill: var(--pass);
+.brand__bg {
+  fill: var(--ink);
 }
 
-.brand__mark path {
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.brand__letters {
+  fill: var(--bg);
+  fill-rule: evenodd;
 }
 
 .site-nav {
@@ -372,6 +373,7 @@ a:hover {
 .runner__list li {
   display: grid;
   grid-template-columns: 1.5em 1fr;
+  transition: color 150ms ease;
 }
 
 .runner__list li::before {
@@ -379,24 +381,27 @@ a:hover {
   color: var(--runner-pass);
 }
 
-.runner__summary span {
-  color: var(--runner-pass);
-  font-weight: 500;
+.runner__list li[data-state="pending"] {
+  color: var(--runner-muted);
+}
+
+.runner__list li[data-state="pending"]::before {
+  content: "○";
+  color: var(--runner-muted);
+}
+
+.runner__list li[data-state="running"]::before {
+  content: "◌";
+  color: var(--runner-ink);
 }
 
 .runner__summary {
   color: var(--runner-muted);
 }
 
-.runner.is-running .runner__list li,
-.runner.is-running .runner__summary {
-  opacity: 0;
-}
-
-.runner .runner__list li.is-done,
-.runner .runner__summary.is-done {
-  opacity: 1;
-  transition: opacity 180ms ease;
+.runner__summary span {
+  color: var(--runner-pass);
+  font-weight: 500;
 }
 
 .section {
@@ -580,56 +585,160 @@ a:hover {
   }
 }
 
+@page {
+  size: A4;
+  margin: 14mm 16mm;
+}
+
 @media print {
   :root,
   :root[data-theme="dark"] {
     --bg: #ffffff;
     --ink: #000000;
-    --muted: #444444;
-    --line: #cccccc;
-    --pass: #18794e;
+    --muted: #333333;
+    --line: #999999;
+    --pass: #000000;
     --link: #000000;
     color-scheme: light;
   }
 
   body {
+    background: #ffffff;
+    font-family: Calibri, Carlito, Arial, sans-serif;
     font-size: 10.5pt;
+    line-height: 1.35;
   }
 
   .site-header,
   .skip-link,
   .actions,
+  .hero__lead,
   .runner,
+  .section--contact,
   .site-footer {
     display: none;
   }
 
+  .container {
+    width: auto;
+  }
+
+  .print-only {
+    display: block;
+  }
+
   .hero {
     display: block;
-    padding-block: 0 1rem;
+    padding: 0 0 4pt;
+    text-align: center;
   }
 
   .hero__title {
-    font-size: 24pt;
+    font-size: 20pt;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.2;
+  }
+
+  .hero__role {
+    margin-top: 2pt;
+    font-size: 11.5pt;
+  }
+
+  .print-contact {
+    margin-top: 4pt;
+    font-size: 9.5pt;
   }
 
   .section {
-    padding-block: 0.75rem;
-    break-inside: avoid-page;
+    display: block;
+    padding: 0;
+    border: 0;
+  }
+
+  .section__title {
+    margin: 12pt 0 6pt;
+    padding-bottom: 2pt;
+    border-bottom: 1pt solid #000000;
+    font-size: 11.5pt;
+    letter-spacing: 0;
+    break-after: avoid;
+  }
+
+  .section__body {
+    max-width: none;
+  }
+
+  .prose p + p {
+    margin-top: 4pt;
   }
 
   .timeline__item {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0 12pt;
     break-inside: avoid;
   }
 
   .timeline__item + .timeline__item {
-    margin-top: 0.5rem;
-    padding-top: 0.5rem;
+    margin-top: 7pt;
+    padding-top: 0;
+    border: 0;
   }
 
-  a[href^="http"]::after {
-    content: " (" attr(href) ")";
-    font-size: 8pt;
-    color: var(--muted);
+  .timeline__date {
+    grid-row: 1;
+    grid-column: 2;
+    color: #000000;
+    font-size: 9.5pt;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .timeline__content {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .timeline__role {
+    font-size: 10.5pt;
+  }
+
+  .timeline__org {
+    margin-bottom: 2pt;
+    font-style: italic;
+  }
+
+  .timeline__points {
+    margin-top: 2pt;
+  }
+
+  .timeline__points li {
+    padding-left: 12pt;
+  }
+
+  .timeline__points li + li {
+    margin-top: 1pt;
+  }
+
+  .timeline__points li::before {
+    top: 0.55em;
+    left: 2pt;
+    width: 3.5pt;
+    height: 3.5pt;
+  }
+
+  .skills__group {
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: 8pt;
+    padding-block: 1.5pt;
+  }
+
+  .skills__group + .skills__group {
+    border: 0;
+  }
+
+  a {
+    color: #000000;
+    text-decoration: none;
   }
 }
