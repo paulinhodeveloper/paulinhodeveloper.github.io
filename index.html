@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;700;800&display=swap">
-  <link rel="stylesheet" href="assets/css/styles.css?v=2">
+  <link rel="stylesheet" href="assets/css/styles.css?v=3">
   <script>
     (() => {
       try {
@@ -27,7 +27,7 @@
       } catch {}
     })();
   </script>
-  <script src="assets/js/main.js?v=2" defer></script>
+  <script src="assets/js/main.js?v=3" defer></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -42,6 +42,11 @@
   </script>
 </head>
 <body>
+  <svg class="icon-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 5.5h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-11a1 1 0 0 1 1-1zm-.5 1.5L12 13l8.5-6"/></symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.57v-2.04c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.21.69.82.57A12 12 0 0 0 12 .3"/></symbol>
+  </svg>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
   <header class="site-header">
@@ -238,18 +243,50 @@
     <section class="section section--contact container" id="contato" aria-labelledby="contato-title">
       <h2 id="contato-title" class="section__title">Contato</h2>
       <div class="section__body contact">
-        <p class="contact__lead">Tem uma vaga de QA ou quer conversar sobre testes? Respondo por e-mail ou pelo LinkedIn.</p>
-        <a class="contact__email" href="mailto:paulinhoborges1337@gmail.com">paulinhoborges1337@gmail.com</a>
-        <ul class="contact__links">
-          <li><a href="https://www.linkedin.com/in/paulinhoborges" rel="me noopener" target="_blank">linkedin.com/in/paulinhoborges</a></li>
-          <li><a href="https://github.com/paulinhodeveloper" rel="me noopener" target="_blank">github.com/paulinhodeveloper</a></li>
+        <p class="contact__lead">Tem uma vaga de QA ou quer conversar sobre testes? Escolha o canal que preferir.</p>
+        <ul class="contact-list">
+          <li class="contact-item">
+            <span class="contact-item__icon"><svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg></span>
+            <div class="contact-item__text">
+              <span class="contact-item__label">E-mail</span>
+              <a class="contact-item__value" href="mailto:paulinhoborges1337@gmail.com">paulinhoborges1337<wbr>@gmail.com</a>
+            </div>
+            <button class="contact-item__action" type="button" data-copy="paulinhoborges1337@gmail.com" aria-live="polite">Copiar</button>
+          </li>
+          <li class="contact-item">
+            <span class="contact-item__icon"><svg class="icon" aria-hidden="true"><use href="#icon-linkedin"/></svg></span>
+            <div class="contact-item__text">
+              <span class="contact-item__label">LinkedIn</span>
+              <a class="contact-item__value" href="https://www.linkedin.com/in/paulinhoborges" rel="me noopener" target="_blank">linkedin.com/<wbr>in/<wbr>paulinhoborges</a>
+            </div>
+            <a class="contact-item__action" href="https://www.linkedin.com/in/paulinhoborges" rel="me noopener" target="_blank" tabindex="-1" aria-hidden="true">Abrir perfil</a>
+          </li>
+          <li class="contact-item">
+            <span class="contact-item__icon"><svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg></span>
+            <div class="contact-item__text">
+              <span class="contact-item__label">GitHub</span>
+              <a class="contact-item__value" href="https://github.com/paulinhodeveloper" rel="me noopener" target="_blank">github.com/<wbr>paulinhodeveloper</a>
+            </div>
+            <a class="contact-item__action" href="https://github.com/paulinhodeveloper" rel="me noopener" target="_blank" tabindex="-1" aria-hidden="true">Abrir perfil</a>
+          </li>
         </ul>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container site-footer__inner">
+    <div class="container site-footer__main">
+      <div class="site-footer__id">
+        <p class="site-footer__name">Paulo Henrique Santos Borges</p>
+        <p>Analista de QA em Joinville/SC</p>
+      </div>
+      <ul class="social">
+        <li><a class="social__link" href="mailto:paulinhoborges1337@gmail.com" aria-label="Enviar e-mail" title="E-mail"><svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg></a></li>
+        <li><a class="social__link" href="https://www.linkedin.com/in/paulinhoborges" rel="me noopener" target="_blank" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></li>
+        <li><a class="social__link" href="https://github.com/paulinhodeveloper" rel="me noopener" target="_blank" aria-label="GitHub" title="GitHub"><svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg></a></li>
+      </ul>
+    </div>
+    <div class="container site-footer__meta">
       <p>&copy; <span data-year>2026</span> Paulo Henrique Santos Borges</p>
       <p><a href="https://github.com/paulinhodeveloper/paulinhodeveloper.github.io" rel="noopener" target="_blank">Código-fonte deste site</a></p>
     </div>
