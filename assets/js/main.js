@@ -128,6 +128,28 @@ function initPrint() {
   });
 }
 
+function initCopy() {
+  document.querySelectorAll("[data-copy]").forEach((button) => {
+    const label = button.textContent;
+    let timer;
+
+    button.addEventListener("click", async () => {
+      clearTimeout(timer);
+      try {
+        await navigator.clipboard.writeText(button.dataset.copy);
+        button.textContent = "Copiado";
+        button.dataset.copied = "";
+      } catch {
+        button.textContent = "Não foi possível copiar";
+      }
+      timer = setTimeout(() => {
+        button.textContent = label;
+        delete button.dataset.copied;
+      }, 2000);
+    });
+  });
+}
+
 function initYear() {
   const year = document.querySelector("[data-year]");
   if (year) year.textContent = String(new Date().getFullYear());
@@ -137,4 +159,5 @@ initThemeToggle();
 initRunner();
 initActiveSection();
 initPrint();
+initCopy();
 initYear();
